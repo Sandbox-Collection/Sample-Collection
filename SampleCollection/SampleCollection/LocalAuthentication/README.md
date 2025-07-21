@@ -1,5 +1,21 @@
- ** LAPolicy **
- 
+# LocalAuthentication
+기능:
+- 사용자가 이미 알고 있는 Face ID, Touch ID, Optic ID, 혹은 패스코드를 이용해 인증할 수 있도록 지원하는 프레임워크.
+
+지원 플랫폼:
+- iOS 8+, iPadOS 8+, macOS 10.10+, macCatalyst 13+, visionOS 1.0+, watchOS 9+
+
+보안 구조:
+- 생체 정보(지문, 얼굴 이미지 등)에 앱은 절대 접근할 수 없음.
+- 해당 데이터는 Secure Enclave(OS도 접근할 수 없는 하드웨어 보안 영역)에서 관리됨.
+
+작동 방식:
+- 앱은 정책(policy) 과 사용자에게 보여줄 메시지만 지정하고, 인증 자체는 OS와 Secure Enclave가 처리함.
+- 앱은 인증의 성공/실패 여부만 Boolean 값으로 전달받음.
+<br>
+<br>
+
+ ## LAPolicy
  deviceOwnerAuthentication
  - 생체 인증 + Apple Watch 인증 + 기기 암호 인증까지 모두 허용하는 범용 정책
  - 생체 인증이 가능하면 우선 사용하고, macOS에선 Apple Watch 병렬 인증도 시도
